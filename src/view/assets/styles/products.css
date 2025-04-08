@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+:root {
+    --marrom: #423640;
+    --violeta: #c08cbd;
+    --violeta-escuro: #8a76a7;
+    --branco: white;
+}
+body {
+    display: flex;
+    flex-direction: row;
+}
+aside {
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    background: var(--violeta);
+    width: 12%;
+}
+a {
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 2.9em;
+    display: block;
+    color: white;
+    font-family: 'Jomhuria', serif;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px black;
+}
+a:hover {
+    background-color: var(--violeta-escuro);
+}
+main {
+    margin-left: 3%;
+    margin-right: 3%;
+    background: var(--marrom);
+    width: 95%;
+}
+.main-content {
+    width: 90%;
+    height: 90%;
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 6em;
+    font-family: 'Jomhuria', serif;
+    text-align: left;
+    color: white;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    text-shadow: 2px 2px 2px black;
+    letter-spacing: 4px;
+}
+
+.main-img {
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.section {
+    display: flex;
+    margin: auto;
+    margin-bottom: 3%;
+    gap: 20px;
+    background-color: var(--violeta);
+    overflow: hidden;
+    border-radius: 20px;
+    font-family: 'Jomhuria', serif;
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    width: 90%;
+}
+
+.section img {
+    max-width: 430px;
+}
+
+.box-father {
+    overflow: hidden;
+}
+#fita-verde {
+    width: 1.72%;
+    background-color: #8d9f78;
+}
+#fita-marrom {
+    width: 1.72%;
+    background-color: #423640;
+}
+ul {
+    text-align: left;
+}
+li {
+    margin-left: 40px;
+}
+p {
+    text-shadow: 2px 2px 2px black;
+}
+
+.section {
+    display: flex;
+    align-items: stretch; /* Faz os elementos internos ocuparem toda a altura */
+    margin: 3% auto;
+    background-color: var(--violeta);
+    border-radius: 20px;
+    font-family: 'Jomhuria', serif;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    width: 90%;
+    overflow: hidden;
+    height: 400px;
+}
+
+.section img {
+    width: 40%; /* A imagem ocupa 40% da section */
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.section-text-left,
+.section-text-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}

@@ -1,0 +1,130 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #423640;
+}
+
+.header-principal {
+  background-color: black; 
+  padding: 10px 0;
+  height: 60px;
+  margin-top: -15px;
+}
+
+.nav-principal ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.nav-principal ul li {
+  margin: 0 15px;
+}
+
+.nav-principal ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-principal ul li a:hover {
+  color: #b291e7;
+}
+
+.main-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.input-email,
+.input-instagram,
+.input-phone,
+.textarea {
+  background-color: #b291e7;
+  color: white;
+  padding: 10px;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-email {
+  padding-right: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 30px 30px;
+  background-image: url("../img/email.png");
+}
+
+.input-instagram {
+  padding-right: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 30px 30px;
+  background-image: url("../img/instagram.png");
+}
+
+.input-phone {
+  padding-right: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 30px 30px;
+  background-image: url("../img/whats.png");
+}
+
+.textarea {
+  height: 150px;
+  resize: none;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  background-color: #b291e7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  line-height: 1.4;
+}
+
+/* Estilo para o rodapé */
+footer {
+  color: white; 
+  text-align: center; 
+  padding: 10px 0; 
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}

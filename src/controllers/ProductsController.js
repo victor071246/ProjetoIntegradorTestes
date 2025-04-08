@@ -8,11 +8,26 @@ class ProductsController {
   }
 
   async store(req, res) {
-    const { title, text, img_url } = req.body;
+    const { title, text, image_url } = req.body;
 
-    const product = await Products.create({ title, text, img_url });
+    // Cria o produto com os dados recebidos
+    const product = await Products.create({ title, text, image_url });
+
+    console.log("Produto criado:", product);
 
     return res.json(product);
+  }
+
+  async destroy(req, res) {
+    const { product_id } = req.params;
+    const product = await Products.findById(product_id);
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    await product.deleteOne();
+    return res
+      .status(200)
+      .json({ message: "Product deleted successfully", title: product.title });
   }
 }
 

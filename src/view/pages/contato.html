@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato</title>
+    <link rel="stylesheet" href="/src/view/assets/styles/contato.css" />
+  </head>
+  <body>
+    <header class="header-principal">
+      <nav class="nav-principal">
+        <ul>
+          <li><a href="./sobre-nos.html">Sobre nós</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="./index.html">Nossos Produtos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-form">
+      <div class="form-container">
+        <input
+          type="text"
+          value="comercial@piterabox.com"
+          readonly
+          class="input-email"
+        />
+        <input
+          type="text"
+          value="@piterabox"
+          readonly
+          class="input-instagram"
+        />
+        <input
+          type="text"
+          value="(16) 99111-1111"
+          readonly
+          class="input-phone"
+        />
+        <textarea readonly class="textarea">
+Vem pro time Pitera Box e vamos revolucionar o mercado com criatividade, qualidade e atitude! Faça já um orçamento!</textarea
+        >
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="year"></span> - Feito por Projeto Integrador - Todos os
+        direitos reservados
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
