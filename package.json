@@ -3,7 +3,7 @@
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "dev": "yarn nodemon src/server.js",
-    "start": "node -r sucrase/register src/server.js"
+    "iniciar": "node -r sucrase/register src/server.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.9",
