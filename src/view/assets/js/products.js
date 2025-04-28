@@ -1,36 +1,23 @@
-const productsDiv = document.getElementById('products_session'); // Corrigido
+const productsDiv = document.getElementById('products');
 
 const api = fetch('http://localhost:3333/products')
     .then((res) => res.json())
     .then((products) =>
-        products.forEach((product, index) => {
-            if (index % 2 == 0) {
-                productsDiv.innerHTML += `
-                <div class="section">
-                    <div class="section-text-left">
-                        <p>
-                            ${product.text}
-                        </p>
-                    </div>
-                    <img
-                        src="${product.image_url}"
-                    />
+        products.forEach((product) => {
+            productsDiv.innerHTML += `
+            <div class="product-card" id="${product._id}">
+                <img
+                    class="product-img"
+                    src="${product.image_url}"
+                    alt="Imagem do produto"
+                />
+                <div class="product-content">
+                    <h3>${product.title}</h3>
+                    <h4>${product.subtitle}</h4>
+                    <p>${product.text}</p>
                 </div>
-            `;
-            } else {
-                productsDiv.innerHTML += `
-                 <div class="section">
-                    <img
-                        src="${product.image_url}"
-                    />
-                    <div class="section-text-right">
-                        <p>
-                            ${product.text}
-                        </p>
-                    </div>
-                </div>
-            `;
-            }
+            </div>
+                    
+    `;
         })
-    )
-    .catch((error) => console.error('Erro ao carregar os produtos:', error)); // Adicionado tratamento de erro
+    );

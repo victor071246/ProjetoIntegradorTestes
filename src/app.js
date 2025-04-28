@@ -2,14 +2,16 @@ import express from "express";
 import mongoose from "mongoose";
 import routes from "./routes";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 class App {
   constructor() {
     this.server = express();
 
-    mongoose.connect(
-      "mongodb+srv://victor:1234@devhouse.q3nlofo.mongodb.net/ProjetoIntegrador?retryWrites=true&w=majority&appName=devhouse"
-    );
+    const mongoURI = process.env.MONGO_URI;
+
+    mongoose.connect(mongoURI);
 
     this.middlewares();
     this.routes();

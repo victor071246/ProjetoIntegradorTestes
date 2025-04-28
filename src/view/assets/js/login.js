@@ -1,20 +1,32 @@
 let logged = false;
 
-function login() {
+function login(event) {
+    event.preventDefault();
+
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
+    const statusDiv = document.getElementById('status');
 
-    if (username == 'admin' && password == 'admin') {
+    // Validação básica
+    if (!username || !password) {
+        statusDiv.textContent = '⚠️ Preencha todos os campos.';
+        statusDiv.style.color = 'orange';
+        return;
+    }
+
+    // Autenticação simples
+    if (username === 'admin' && password === 'admin') {
         logged = true;
-        document.getElementById('status').textContent = 'Login bem-sucedido!';
+        statusDiv.textContent = '✅ Login bem-sucedido!';
+        statusDiv.style.color = 'green';
         console.log('Usuário logado:', logged);
 
         setTimeout(() => {
-            window.location.href = 'add_products.html';
-        }, 1500); // redireciona após 1.5 segundos
+            window.location.href = 'add_product.html';
+        }, 1500);
     } else {
-        document.getElementById('status').textContent =
-            'Preencha todos os campos.';
         logged = false;
+        statusDiv.textContent = '❌ Usuário ou senha inválidos.';
+        statusDiv.style.color = 'red';
     }
 }
