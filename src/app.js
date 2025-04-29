@@ -8,9 +8,6 @@ import path from "path"; // Importando o módulo 'path' para manipulação de ca
 // Carrega as variáveis de ambiente
 dotenv.config();
 
-// Verifique se a variável MONGO_URI foi carregada
-console.log("MONGO_URI:", process.env.MONGO_URI); // Isso deve imprimir o valor da variável de ambiente
-
 class App {
   constructor() {
     this.server = express();
@@ -30,12 +27,14 @@ class App {
         process.exit(1);
       });
 
-    // Definindo os middlewares
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
+    // Serve arquivos estáticos da pasta 'view'
+    this.server.use(express.static(path.join(__dirname, "../view"))); // Atualize para o caminho correto da pasta 'view'
+
     this.server.use(cors());
     this.server.use(express.json());
   }
@@ -43,7 +42,7 @@ class App {
   routes() {
     // Rota para servir o arquivo index.html diretamente ao acessar a raiz '/'
     this.server.get("/", (req, res) => {
-      res.sendFile(path.join(__dirname, "../view", "index.html"));
+      res.sendFile(path.join(__dirname, "../view", "index.html")); // Atualize para o caminho correto da pasta 'view'
     });
 
     this.server.use(routes);
