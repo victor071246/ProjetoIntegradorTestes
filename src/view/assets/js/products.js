@@ -1,6 +1,7 @@
 const isLocalhost = ['localhost', '127.0.0.1'].includes(
     window.location.hostname
 );
+console(isLocalhost);
 
 console.log(isLocalhost);
 const api_url = isLocalhost
