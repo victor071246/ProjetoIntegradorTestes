@@ -1,6 +1,6 @@
 {
   "name": "Projeto-Integrador",
-  "packageManager": "yarn@4.6.0",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "yarn nodemon src/server.js",
     "iniciar": "node -r sucrase/register src/server.js"
