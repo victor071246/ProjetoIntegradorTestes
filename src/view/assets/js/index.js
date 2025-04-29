@@ -1,8 +1,17 @@
 let index = 0;
+const isLocalhost = ['localhost', '127.0.0.1'].includes(
+    window.location.hostname
+);
+
+console.log(isLocalhost);
+const api_url = isLocalhost
+    ? 'http://localhost:3333/products'
+    : 'https://projetointegradortestes.onrender.com/products';
+console.log(api_url);
 
 async function carregarProdutos() {
     try {
-        const res = await fetch('http://localhost:3333/products');
+        const res = await fetch(api_url);
         const data = await res.json();
         const produtos = Array.isArray(data) ? data : [];
         console.log(produtos);
@@ -23,7 +32,7 @@ function mudarConteudo(produtos) {
                 (rule) => rule.selectorText === 'body::after'
             );
         } catch (e) {
-            return false; // Evita erros de CORS se tiver folha externa
+            return false; // Evita erros de CORS
         }
     });
 
@@ -69,17 +78,18 @@ function iniciarTransicao(produtos) {
     // Chama novamente a função de transição após 15 segundos
     setTimeout(() => {
         iniciarTransicao(produtos); // Chama a transição novamente com os produtos
-    }, 15000); // Delay de 15000ms (15 segundos)
+    }, 5000); // Delay de 15000ms (15 segundos)
 }
 
 // Inicia a transição automaticamente após 15 segundos do carregamento da página
 window.onload = async () => {
+    console.log('teste');
     const produtos = await carregarProdutos();
 
     if (produtos.length > 0) {
         setTimeout(() => {
             iniciarTransicao(produtos); // Inicia a transição passando os produtos corretamente
-        }, 15000); // 15000ms (15 segundos)
+        }, 5000); // 15000ms (15 segundos)
     } else {
         console.warn('Nenhum produto carregado.');
     }

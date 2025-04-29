@@ -1,6 +1,11 @@
 const productsDiv = document.getElementById('products');
 
-const api = fetch('http://localhost:3333/products')
+const isLocalhost = window.location.hostname === 'localhost';
+const api_url = isLocalhost
+    ? 'http://localhost:3333/products'
+    : 'https://projetointegradortestes.onrender.com/products';
+
+const api = fetch(api_url)
     .then((res) => res.json())
     .then((products) =>
         products.forEach((product) => {
@@ -48,7 +53,7 @@ document.querySelector('#products').addEventListener('click', (event) => {
 
         const newProduct = { title, subtitle, image_url, text, color1, color2 };
 
-        fetch('http://localhost:3333/products', {
+        fetch(api_url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -158,7 +163,7 @@ document.querySelector('#products').addEventListener('click', (event) => {
 // });
 
 function deleteProduct(productId) {
-    fetch(`http://localhost:3333/products/${productId}`, {
+    fetch(`${api_url}/${productId}`, {
         method: 'DELETE',
     })
         .then((res) => {

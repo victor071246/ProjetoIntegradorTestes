@@ -1,6 +1,16 @@
+const isLocalhost = ['localhost', '127.0.0.1'].includes(
+    window.location.hostname
+);
+
+console.log(isLocalhost);
+const api_url = isLocalhost
+    ? 'http://localhost:3333/products'
+    : 'https://projetointegradortestes.onrender.com/products';
+console.log(api_url);
+
 const productsDiv = document.getElementById('products');
 
-const api = fetch('http://localhost:3333/products')
+const api = fetch(api_url)
     .then((res) => res.json())
     .then((products) =>
         products.forEach((product) => {
