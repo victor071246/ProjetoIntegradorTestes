@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import routes from "./routes";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path"; // Importando o módulo 'path' para manipulação de caminhos
 
 // Carrega as variáveis de ambiente
 dotenv.config();
@@ -29,16 +30,25 @@ class App {
         process.exit(1);
       });
 
+    // Definindo os middlewares
     this.middlewares();
     this.routes();
   }
 
   middlewares() {
+    // Serve arquivos estáticos da pasta 'views'
+    this.server.use(express.static(path.join(__dirname, "views")));
+
     this.server.use(cors());
     this.server.use(express.json());
   }
 
   routes() {
+    // Rota para servir o arquivo index.html diretamente ao acessar a raiz '/'
+    this.server.get("/", (req, res) => {
+      res.sendFile(path.join(__dirname, "views", "index.html"));
+    });
+
     this.server.use(routes);
   }
 }
