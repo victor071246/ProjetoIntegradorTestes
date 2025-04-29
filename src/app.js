@@ -37,7 +37,7 @@ class App {
 
   middlewares() {
     // Serve arquivos estáticos da pasta 'views'
-    this.server.use(express.static(path.join(__dirname, "views")));
+    this.server.use(express.static(path.join(__dirname, "../views")));
 
     this.server.use(cors());
     this.server.use(express.json());
@@ -46,7 +46,7 @@ class App {
   routes() {
     // Rota para servir o arquivo index.html diretamente ao acessar a raiz '/'
     this.server.get("/", (req, res) => {
-      res.sendFile(path.join(__dirname, "views", "index.html"));
+      res.sendFile(path.join(__dirname, "../views", "index.html"));
     });
 
     this.server.use(routes);
