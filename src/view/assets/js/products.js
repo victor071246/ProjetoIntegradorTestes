@@ -1,9 +1,9 @@
 const isLocalhost = ['localhost', '127.0.0.1'].includes(
     window.location.hostname
 );
-console(isLocalhost);
 
 console.log(isLocalhost);
+
 const api_url = isLocalhost
     ? 'http://localhost:3333/products'
     : 'https://projetointegradortestes.onrender.com/products';
