@@ -79,7 +79,7 @@ function iniciarTransicao(produtos) {
     // Chama novamente a função de transição após 15 segundos
     setTimeout(() => {
         iniciarTransicao(produtos); // Chama a transição novamente com os produtos
-    }, 5000); // Delay de 15000ms (15 segundos)
+    }, 10000); // Delay de 10000ms (15 segundos)
 }
 
 // Inicia a transição automaticamente após 15 segundos do carregamento da página
@@ -90,7 +90,7 @@ window.onload = async () => {
     if (produtos.length > 0) {
         setTimeout(() => {
             iniciarTransicao(produtos); // Inicia a transição passando os produtos corretamente
-        }, 5000); // 15000ms (15 segundos)
+        }, 10000); // 10000ms (10 segundos)
     } else {
         console.warn('Nenhum produto carregado.');
     }

@@ -320,7 +320,7 @@ body::after {
         transform: translateY(30px);
         animation: fadeInUp 0.8s forwards;
         animation-delay: 0.8s;
-        font-size: 28px;
+        font-size: 100%;
     }
 
     .product-card {
@@ -350,9 +350,11 @@ body::after {
         padding-left: 30px;
         display: flex;
         flex-direction: column;
-        margin-left: auto;
+        margin-left: 0%;
         margin-right: auto;
         text-align: center;
+        align-items: center;
+        justify-content: center;
         gap: 30px;
     }
     .delete-btn {
