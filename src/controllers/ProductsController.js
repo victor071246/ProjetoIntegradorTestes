@@ -8,10 +8,17 @@ class ProductsController {
   }
 
   async store(req, res) {
-    const { title, subtitle, text, image_url } = req.body;
+    const { title, subtitle, shop_title, price, text, image_url } = req.body;
 
     // Cria o produto com os dados recebidos
-    const product = await Products.create({ title, subtitle, text, image_url });
+    const product = await Products.create({
+      title,
+      subtitle,
+      shop_title,
+      price,
+      text,
+      image_url,
+    });
 
     console.log("Produto criado:", product);
 

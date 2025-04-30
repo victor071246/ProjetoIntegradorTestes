@@ -76,7 +76,7 @@ main {
     border-radius: 10px;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
     width: 1200px;
-    height: 1100px;
+    height: 1200px;
     background-color: white;
     text-align: center;
     opacity: 0;
@@ -400,7 +400,7 @@ body::after {
     .div-less-text {
         margin: auto;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 60px;
         align-items: center;
         align-content: center;
@@ -434,7 +434,7 @@ body::after {
         cursor: pointer;
         font-weight: bold;
         transition: background-color 0.3s ease;
-        width: 331px;
+        width: 80%;
         height: 40px;
         font-size: 20px;
         justify-content: center;
