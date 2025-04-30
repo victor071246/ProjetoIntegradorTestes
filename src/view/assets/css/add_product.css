@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .positioned-image {
     position: absolute;
     left: 36px;
@@ -16,8 +11,13 @@
 }
 
 body {
-    font-family: sans-serif;
-    background: radial-gradient(circle at 50% 50%, #ffffff, #cecece);
+    font-family: 'Yusei Magic', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: black;
+    margin: 0;
+    position: relative;
+    height: 100vh;
 }
 
 header {
@@ -213,5 +213,235 @@ button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/imagem_textura_2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #708f94, #c3a5d4);
+    background-size: 200% 100%;
+    animation: animateRadial 10s ease-in-out infinite alternate;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.7;
+}
+@media (max-width: 470px) {
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('../img/imagem_textura_2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+    }
+    .positioned-image {
+        position: absolute;
+        left: 2%;
+        top: 1%;
+        width: 5.84rem;
+        height: 3.38rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+        animation-delay: 0.1s;
+    }
+    header {
+        height: 7.68%;
+        width: 100vw;
+        display: flex;
+        font-size: 90%;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        text-decoration: underline;
+        text-decoration-thickness: 2px; /* Espessura da linha */
+        text-underline-offset: 6px;
+        z-index: 2;
+    }
+    main {
+        width: 100vw;
+        margin: 0%;
+        padding: 0%;
+        left: 0%;
+        margin-top: 15%;
+    }
+    .header-menu {
+        width: 100%; /* Ajustado para 100% */
+        justify-content: space-evenly; /* Substitui o gap por um espaçamento uniforme */
+        display: flex;
+        margin: 0px;
+        padding: 0%;
+        bottom: 0;
+        margin-top: 20%;
+        z-index: 2;
+        gap: 0px;
+    }
+    .header-menu a {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+        color: black;
+    }
+
+    .login-card {
+        margin-top: 10%;
+        bottom: 158px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        height: 90%;
+        background-color: white;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+        animation-delay: 0.8s;
+        font-size: 28px;
+    }
+
+    .product-card {
+        margin-top: 100px;
+        width: 80%;
+        background-color: white;
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+        animation-delay: 0.8s;
+        font-size: 100%;
+        padding: 30px;
+        border-radius: 10px;
+        display: flex;
+        margin-left: 0%;
+        margin-right: 0%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .product-img {
+        width: 250px;
+        height: 250px;
+    }
+    .product-content {
+        flex: 1;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        gap: 30px;
+    }
+    .delete-btn {
+        z-index: 2;
+        position: absolute;
+        top: 6px;
+        right: 20px;
+        width: 30px;
+        background-color: transparent;
+        border: none;
+        color: #888;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
+    .delete-btn:hover {
+        color: red;
+        background: none;
+    }
+
+    .user-icon {
+        width: 255px;
+        height: 255px;
+    }
+
+    .mother-div {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    label {
+        text-align: left;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .less-text {
+        width: 120px;
+    }
+
+    .div-less-text {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        align-items: center;
+        align-content: center;
+    }
+    input {
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 24px;
+        text-align: center;
+    }
+    textarea {
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 24px;
+        text-align: center;
+        height: 350px;
+        text-align: left;
+        resize: none;
+    }
+
+    button {
+        background-color: #5d655b;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        width: 331px;
+        height: 40px;
+        font-size: 20px;
+        justify-content: center;
+        text-align: center;
+        display: block;
+        margin: auto;
+    }
+    .botao {
+        position: relative;
+        z-index: 10;
     }
 }

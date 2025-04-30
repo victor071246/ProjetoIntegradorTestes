@@ -24,7 +24,6 @@ const api = fetch(api_url)
                 />
                 <div class="product-content">
                     <h3>${product.title}</h3>
-                    <h4>${product.subtitle}</h4>
                     <p>${product.text}</p>
                 </div>
             </div>
