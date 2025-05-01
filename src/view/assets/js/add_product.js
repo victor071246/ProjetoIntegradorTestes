@@ -45,15 +45,25 @@ document.querySelector('#products').addEventListener('click', (event) => {
         const text = document.getElementById('textarea-text').value.trim();
         const color1 = document.getElementById('color-1').value.trim();
         const color2 = document.getElementById('color-2').value.trim();
-        const price = document.getElementById('price').value.trim();
-        const shop_title = document.getElementById('shop-title').value.trim();
+        // const price = document.getElementById('price').value.trim();
+        const shop_title = document
+            .getElementById('input-shop-title')
+            .value.trim();
 
         if (!title || !image_url || !text) {
             alert('Preencha todos os campos.');
             return;
         }
 
-        const newProduct = { title, subtitle, image_url, text, color1, color2 };
+        const newProduct = {
+            title,
+            subtitle,
+            shop_title,
+            image_url,
+            text,
+            color1,
+            color2,
+        };
 
         fetch(api_url, {
             method: 'POST',
@@ -92,8 +102,8 @@ document.querySelector('#products').addEventListener('click', (event) => {
                 document.getElementById('input-img-url').value = '';
                 document.getElementById('textarea-text').value = '';
                 document.getElementById('input-subtitle').value = '';
-                document.getElementById('price').value = '';
-                document.getElementById('shop-title').value = '';
+                // document.getElementById('price').value = '';
+                document.getElementById('input-shop-title').value = '';
                 document.getElementById('color-1').value = '';
                 document.getElementById('color-2').value = '';
             })

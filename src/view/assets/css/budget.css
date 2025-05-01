@@ -85,6 +85,7 @@ main {
     font-family: 'Source Serif 4', serif;
     color: white;
     background-color: #484848;
+    font-size: 30px;
     justify-content: center;
     align-items: stretch;
     margin-top: 5%;
@@ -124,6 +125,10 @@ main {
     flex-direction: row;
     width: 780px;
     border-right: 2px solid #d9d9d9;
+}
+.image_and_title img {
+    width: 200px;
+    height: 200px;
 }
 .image_and_title p {
     width: 100%;
@@ -174,6 +179,12 @@ main {
     border: none;
     text-align: center;
     font-size: 30px;
+}
+main {
+    padding-bottom: 20px;
+}
+.mobile_product {
+    display: none;
 }
 
 @keyframes fadeInUp {
@@ -250,7 +261,7 @@ body::after {
         margin: 0%;
         padding: 0%;
         left: 0%;
-        margin-top: 15%;
+        margin: 15% 0%;
     }
     .header-menu {
         width: 100%; /* Ajustado para 100% */
@@ -278,5 +289,128 @@ body::after {
         margin: 0px;
         padding: 0px;
         position: relative;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('../img/imagem_textura_2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -2;
+    }
+    .positioned-image {
+        position: absolute;
+        left: 2%;
+        top: 1%;
+        width: 5.84rem;
+        height: 3.38rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+        animation-delay: 0.1s;
+    }
+    header {
+        height: 7.68%;
+        width: 100vw;
+        display: flex;
+        font-size: 80%;
+        text-shadow: 2px 2px 8px black;
+        text-decoration: underline;
+        text-decoration-thickness: 2px; /* Espessura da linha */
+        text-underline-offset: 6px;
+        z-index: 2;
+    }
+
+    .header-menu {
+        width: 100%; /* Ajustado para 100% */
+        justify-content: space-evenly; /* Substitui o gap por um espaçamento uniforme */
+        display: flex;
+        margin: 0px;
+        padding: 0%;
+        bottom: 0;
+        margin-top: 20%;
+        z-index: 2;
+        gap: 0px;
+    }
+    .header-menu a {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s forwards;
+        color: white;
+    }
+
+    .title {
+        display: none;
+    }
+
+    #products {
+        width: 100vw;
+        border-top: solid 2px;
+        border-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+    }
+    #products_insertion_div {
+        display: none;
+    }
+    .mobile_product {
+        width: 95%;
+        display: flex;
+        background-color: white;
+        box-sizing: border-box;
+        padding: 3% 0%;
+        gap: 10%;
+        border-bottom: solid 1px;
+        border-color: #d9d9d9;
+    }
+    .mobile_product img {
+        width: 130px;
+        height: 130px;
+    }
+    .less img,
+    .more img {
+        width: 33px;
+        height: 33px;
+    }
+    .quantity_input {
+        font-size: 120%;
+        width: 30px;
+        height: 30px;
+        border: none;
+    }
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .content h2 {
+        box-sizing: border-box;
+        padding-top: 5%;
+        font-size: 100%;
+        text-align: left;
+        font-family: 'Source Serif 4', serif;
+        font-weight: 500;
+    }
+    .quantity_input:focus {
+        border: none;
+        outline: none;
+    }
+    .mobile_input {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+    }
+    body {
+        margin-bottom: 40%;
     }
 }
