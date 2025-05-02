@@ -12,6 +12,9 @@ const api_url = isLocalhost
 console.log(api_url);
 
 const productsDiv = document.getElementById('products_insertion_div');
+const btnWhatsapp = document.getElementById('whastapp_button_id');
+let mensagem = 'Olá! Gostaria de fazer um orçamento:\n\n';
+
 if (window.innerWidth > 600) {
     fetch(api_url)
         .then((res) => res.json())
@@ -64,6 +67,25 @@ if (window.innerWidth > 600) {
                     total.value = totalValue + quantity;
                 });
             });
+        })
+        .then(() => {
+            btnWhatsapp.addEventListener('click', () => {
+                document.querySelectorAll('.product').forEach((product) => {
+                    const input = product.querySelector('.quantity_input');
+                    product;
+                    const quantity = input.value;
+                    const product_p =
+                        product.querySelector('.image_and_title p');
+                    const product_title = product_p.textContent;
+
+                    mensagem += `${product_title} - Quantidade: ${quantity}\n`;
+                });
+                const url = `https://wa.me/16997684142?text=${encodeURIComponent(
+                    mensagem
+                )}`;
+                console.log(mensagem);
+                window.open(url, '_blank');
+            });
         });
 } else {
     const productsDiv = document.getElementById('products');
@@ -94,5 +116,44 @@ if (window.innerWidth > 600) {
             `
                 );
             })
-        );
+        )
+        .then(() => {
+            document.querySelectorAll('.mobile_product').forEach((product) => {
+                const minusBtn = product.querySelector('.less');
+                const plusBtn = product.querySelector('.more');
+                const input = product.querySelector('.quantity_input');
+                let quantity = parseInt(input.value);
+
+                minusBtn.addEventListener('click', () => {
+                    input.value - 1 < 0
+                        ? (input.value = 0)
+                        : (input.value -= 1);
+                });
+
+                plusBtn.addEventListener('click', () => {
+                    quantity += 1;
+                    input.value = quantity;
+                });
+            });
+        })
+        .then(() => {
+            btnWhatsapp.addEventListener('click', () => {
+                document
+                    .querySelectorAll('.mobile_product')
+                    .forEach((product) => {
+                        const input = product.querySelector('.quantity_input');
+                        product;
+                        const quantity = input.value;
+                        const product_p = product.querySelector('.content h2');
+                        const product_title = product_p.textContent;
+
+                        mensagem += `${product_title} - Quantidade: ${quantity}\n`;
+                    });
+                const url = `https://wa.me/16997684142?text=${encodeURIComponent(
+                    mensagem
+                )}`;
+                console.log(mensagem);
+                window.open(url, '_blank');
+            });
+        });
 }

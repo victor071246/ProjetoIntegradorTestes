@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+footer {
+    bottom: -200px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    filter: invert(1);
+    justify-content: space-between;
+    gap: 25px;
+}
+.icons a img {
+    width: 60px;
+}
+
+.made_by {
+    right: 0;
+}
+.made_by a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Source Serif 4', serif;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+}
+.linkedin_icon {
+    width: 15px;
+    filter: invert(1);
+}
+
+@media (max-width: 470px) {
+    footer {
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .icons {
+        display: flex;
+        align-items: center;
+        filter: invert(1);
+        justify-content: space-between;
+        gap: 30px;
+    }
+    .icons a img {
+        width: 40px;
+    }
+    .made_by {
+        right: 0;
+    }
+    .made_by a {
+        text-decoration: none;
+        font-size: 10px;
+        color: white;
+    }
+    .linkedin_icon {
+        width: 10px;
+        filter: invert(1);
+        font-family: 'Source Serif 4', serif;
+    }
+}

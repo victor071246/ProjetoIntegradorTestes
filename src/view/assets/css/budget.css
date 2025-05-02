@@ -186,6 +186,27 @@ main {
 .mobile_product {
     display: none;
 }
+.whastapp_button {
+    width: 371.7px;
+    height: 66.5px;
+    background-color: #8dc981;
+    border-radius: 60px;
+    color: white;
+    font-size: 20px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+    border: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 0px 8px;
+}
+.whastapp_button img {
+    width: 60px;
+    height: 60px;
+    filter: invert(100%);
+}
 
 @keyframes fadeInUp {
     to {
@@ -262,6 +283,8 @@ body::after {
         padding: 0%;
         left: 0%;
         margin: 15% 0%;
+        display: flex;
+        justify-content: center;
     }
     .header-menu {
         width: 100%; /* Ajustado para 100% */
@@ -410,7 +433,24 @@ body::after {
         justify-content: end;
         align-items: center;
     }
+
     body {
         margin-bottom: 40%;
+    }
+    .whastapp_button {
+        width: 260.19px; /* 30% a menos */
+        height: 46.55px; /* 30% a menos */
+        background-color: #8dc981;
+        border-radius: 60px;
+        color: white;
+        font-size: 14px; /* 30% a menos */
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+        border: none;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-top: 20px;
+        box-sizing: border-box;
+        padding: 0px 8px;
     }
 }

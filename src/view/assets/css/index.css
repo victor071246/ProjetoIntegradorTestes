@@ -41,7 +41,11 @@ header {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s forwards;
+    transform: font-size 0.3 ease-in-out;
     color: white;
+}
+.header-menu a:hover {
+    font-size: 110%;
 }
 
 .header-menu a:nth-child(1) {
