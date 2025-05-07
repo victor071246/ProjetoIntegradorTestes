@@ -4,6 +4,8 @@ import routes from "./routes";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import session from "express-session";
+import MongoStore from "connect-mongo";
 
 // Carrega as variáveis de ambiente
 dotenv.config();
@@ -33,10 +35,31 @@ class App {
 
   middlewares() {
     // Serve arquivos estáticos da pasta 'view'
-    this.server.use(express.static(path.join(__dirname, "view")));
+    this.server.use(express.static(path.join(__dirname, "view", "public")));
 
-    this.server.use(cors());
+    this.server.use(
+      cors({
+        origin: true, // reflexivo: pega o origin da requisição
+        credentials: true, // permite cookies
+      })
+    );
+
     this.server.use(express.json());
+
+    // Sessão
+    this.server.use(
+      session({
+        secret: process.env.SESSION_SECRET || "umSegredoForte", // Troque por uma variável de ambiente real
+        resave: false,
+        saveUninitialized: false,
+        store: MongoStore.create({
+          mongoUrl: process.env.MONGO_URI,
+        }),
+        cookie: {
+          maxAge: 1000 * 60 * 60, // 1 hora
+        },
+      })
+    );
   }
 
   routes() {
