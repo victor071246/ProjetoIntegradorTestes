@@ -8,6 +8,7 @@ const api_url = isLocalhost
     : 'https://projetointegradortestes.onrender.com/products';
 
 console.log(api_url);
+
 const api = fetch(api_url)
     .then((res) => res.json())
     .then((products) =>

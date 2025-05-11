@@ -83,7 +83,7 @@ footer {
         width: 100%;
         padding-bottom: 0px;
         z-index: 2;
-        bottom: -100px;
+        bottom: -0px;
     }
     .div-text {
         position: absolute;
@@ -93,7 +93,7 @@ footer {
         margin-top: 12%;
     }
     .div-text h2 {
-        margin-top: 80%;
+        margin-top: 82%;
     }
     .image-wrapper {
         top: 17%;

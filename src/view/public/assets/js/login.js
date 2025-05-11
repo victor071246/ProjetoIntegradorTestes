@@ -1,12 +1,11 @@
 const isLocalhost = ['localhost', '127.0.0.1'].includes(
     window.location.hostname
 );
-
 console.log(isLocalhost);
 
 const api_url = isLocalhost
     ? 'http://localhost:3333'
-    : 'https://projetointegradortestes.onrender.com/products';
+    : 'https://projetointegradortestes.onrender.com/';
 console.log(api_url);
 
 const form = document.querySelector('#loginForm');
@@ -41,7 +40,7 @@ form.addEventListener('submit', async (e) => {
         statusDiv.textContent = '✅ Login bem-sucedido!';
         // statusDiv.textContent = `✅ ${data.ok}`;
         statusDiv.style.color = 'green';
-        window.location.href = 'http://localhost:3333/dashboard';
+        window.location.href = `${api_url}/dashboard`;
     } else {
         const data = await response.json();
         statusDiv.textContent = `❌ ${data.error}`;
