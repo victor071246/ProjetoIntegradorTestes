@@ -97,13 +97,16 @@ header {
 
 h1 {
     font-size: 66px;
-    margin-bottom: 93px;
+    margin-bottom: 70px;
     margin-right: 150px;
 }
 h2 {
+    display: flex;
+    justify-content: center;
     margin-right: 150px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     font-size: 44px;
+    text-align: center;
 }
 p {
     text-align: justify;
@@ -292,6 +295,8 @@ body::after {
         text-align: center;
     }
     h2 {
+        display: flex;
+        width: 100%;
         font-size: 100%;
         margin: 90% 0% 0% 0%;
         text-align: center;

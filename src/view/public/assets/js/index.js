@@ -44,6 +44,20 @@ function mudarConteudo(produtos) {
 
         if (regra) {
             regra.style.background = `linear-gradient(90deg, ${produto.color1}, ${produto.color2})`;
+
+            // Alterando outras propriedades, se necessário
+            regra.style.content = "''"; // Necessário para garantir que o conteúdo seja gerado
+            regra.style.position = 'fixed';
+            regra.style.top = '0';
+            regra.style.left = '0';
+            regra.style.width = '100vw';
+            regra.style.height = '100vh';
+            regra.style.backgroundSize = '200% 100%';
+            regra.style.animation =
+                'animateRadial 10s ease-in-out infinite alternate';
+            regra.style.zIndex = '-1';
+            regra.style.pointerEvents = 'none';
+            regra.style.opacity = '0.7';
         }
     }
 
@@ -59,6 +73,9 @@ function mudarConteudo(produtos) {
 
 function iniciarTransicao(produtos) {
     const transicao = document.getElementById('transicao');
+    setTimeout(() => {
+        mudarConteudo(produtos);
+    }, 700);
 
     // Mover a barra da esquerda até sair pela direita
     transicao.style.transition = 'none'; // Desabilita a transição momentaneamente
@@ -71,15 +88,10 @@ function iniciarTransicao(produtos) {
     transicao.style.transition = 'left 2.5s ease';
     transicao.style.left = '100%'; // Move a barra para a direita (fora da tela)
 
-    // Atualiza o conteúdo com os dados do próximo produto
-    setTimeout(() => {
-        mudarConteudo(produtos);
-    }, 800);
-
     // Chama novamente a função de transição após 15 segundos
     setTimeout(() => {
         iniciarTransicao(produtos); // Chama a transição novamente com os produtos
-    }, 10000); // Delay de 10000ms (15 segundos)
+    }, 7500); // Delay de 10000ms (15 segundos)
 }
 
 // Inicia a transição automaticamente após 15 segundos do carregamento da página
@@ -90,7 +102,7 @@ window.onload = async () => {
     if (produtos.length > 0) {
         setTimeout(() => {
             iniciarTransicao(produtos); // Inicia a transição passando os produtos corretamente
-        }, 10000); // 10000ms (10 segundos)
+        }, 7500); // 10000ms (10 segundos)
     } else {
         console.warn('Nenhum produto carregado.');
     }
