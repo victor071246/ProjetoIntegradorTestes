@@ -5,7 +5,7 @@ console.log(isLocalhost);
 
 const api_url = isLocalhost
     ? 'http://localhost:3333'
-    : 'https://projetointegradortestes.onrender.com/';
+    : 'https://projetointegradortestes.onrender.com';
 console.log(api_url);
 
 const form = document.querySelector('#loginForm');
