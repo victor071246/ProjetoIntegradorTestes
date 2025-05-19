@@ -4,12 +4,12 @@ const isLocalhost = ['localhost', '127.0.0.1'].includes(
     window.location.hostname
 );
 const api_url = isLocalhost
-    ? 'http://localhost:3333/products'
-    : 'https://projetointegradortestes.onrender.com/products';
+    ? 'http://localhost:3333/'
+    : 'https://projetointegradortestes.onrender.com/';
 
-console.log(api_url);
+console.log(`${api_url}products`);
 
-const api = fetch(api_url)
+const api = fetch(`${api_url}products`)
     .then((res) => res.json())
     .then((products) =>
         products.forEach((product) => {
@@ -73,7 +73,7 @@ document.querySelector('#products').addEventListener('click', (event) => {
             color2,
         };
 
-        fetch(api_url, {
+        fetch(`${api_url}products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ document.querySelector('#products').addEventListener('click', (event) => {
 });
 
 function deleteProduct(productId) {
-    fetch(`${api_url}/${productId}`, {
+    fetch(`${api_url}products/${productId}`, {
         method: 'DELETE',
     })
         .then((res) => {
@@ -145,7 +145,7 @@ function deleteProduct(productId) {
         });
 }
 function editProductLoadInfo(productId) {
-    fetch(`${api_url}/${productId}`)
+    fetch(`${api_url}products/${productId}`)
         .then((res) => res.json())
         .then((product) => {
             document.getElementById('input-title').value = product.title;
@@ -172,7 +172,7 @@ document.querySelector('#products').addEventListener('click', (event) => {
         const text = document.getElementById('textarea-text').value.trim();
         const color1 = document.getElementById('color-1').value.trim();
         const color2 = document.getElementById('color-2').value.trim();
-        const productId = button.getAttribute('data-id');
+        const productId = event.target.getAttribute('data-id');
         // const price = document.getElementById('price').value.trim();
         const shop_title = document
             .getElementById('input-shop-title')
@@ -193,7 +193,7 @@ document.querySelector('#products').addEventListener('click', (event) => {
             color2,
         };
 
-        fetch(`${api_url}/${productId}`, {
+        fetch(`${api_url}products/${productId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
